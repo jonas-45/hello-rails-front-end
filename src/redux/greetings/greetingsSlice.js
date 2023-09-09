@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getRandomGreeting = createAsyncThunk('greeting', async () => {
   try{
-    const response = await fetch('localhost:3000/api/random_greeting');
+    const response = await fetch('http://localhost:3000/api/random_greeting');
 
     if(!response.ok){
       throw new Error('Could not get greeting');
@@ -13,7 +13,6 @@ export const getRandomGreeting = createAsyncThunk('greeting', async () => {
   }catch(error){
     throw new Error('Request failed');
   }
-  
 })
 
 const initialState = {
